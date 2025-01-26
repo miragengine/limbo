@@ -55,15 +55,46 @@ document.addEventListener('DOMContentLoaded', function() {
         auto_mode_button.classList.remove('active');
         manual_mode_container.style.display = 'block';
         auto_mode_container.style.display = 'none';
+    
+        disable_auto_mode_inputs();
     }
-
+    
     function switch_to_auto() {
         auto_mode_button.classList.add('active');
         manual_mode_button.classList.remove('active');
         manual_mode_container.style.display = 'none';
         auto_mode_container.style.display = 'block';
+    
+        enable_auto_mode_inputs();
+    }    
+
+    function enable_auto_mode_inputs() {
+        reset_button.removeAttribute("disabled");
+        increase_by_button.removeAttribute("disabled");
+        reset_loss_button.removeAttribute("disabled");
+        increase_by_loss_button.removeAttribute("disabled");
+        stop_profit_input.removeAttribute("disabled");
+        stop_loss_input.removeAttribute("disabled");
+    
+        if (increase_by_button.classList.contains("active")) {
+            increase_input.removeAttribute("disabled");
+        }
+        if (increase_by_loss_button.classList.contains("active")) {
+            increase_loss_input.removeAttribute("disabled");
+        }
     }
 
+    function disable_auto_mode_inputs() {
+        reset_button.setAttribute("disabled", true);
+        increase_by_button.setAttribute("disabled", true);
+        increase_input.setAttribute("disabled", true);
+        reset_loss_button.setAttribute("disabled", true);
+        increase_by_loss_button.setAttribute("disabled", true);
+        increase_loss_input.setAttribute("disabled", true);
+        stop_profit_input.setAttribute("disabled", true);
+        stop_loss_input.setAttribute("disabled", true);
+    }
+    
     reset_button.addEventListener("click", function () {
         reset_button.classList.add("active");
         increase_by_button.classList.remove("active");
@@ -243,32 +274,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 total_profit += profit;
                 set_balance(get_balance() + bet_amount * target_multiplier);
     
-                const increase_win_percentage = parseFloat(increase_input.value) || 0;
-                let new_bet_amount = default_bet_amount;
+                if (auto_mode_button.classList.contains("active")) {
+                    const increase_win_percentage = parseFloat(increase_input.value) || 0;
+                    let new_bet_amount = default_bet_amount;
     
-                if (reset_button.classList.contains("active")) {
-                    new_bet_amount = default_bet_amount;
-                } else if (increase_by_button.classList.contains("active")) {
-                    new_bet_amount = bet_amount + (bet_amount * increase_win_percentage / 100);
+                    if (reset_button.classList.contains("active")) {
+                        new_bet_amount = default_bet_amount;
+                    } else if (increase_by_button.classList.contains("active")) {
+                        new_bet_amount = bet_amount + (bet_amount * increase_win_percentage / 100);
+                    }
+    
+                    bet_amount_input.value = new_bet_amount.toFixed(2);
+                    bet_amount_input.setAttribute("data-default", new_bet_amount);
                 }
-    
-                bet_amount_input.value = new_bet_amount.toFixed(2);
-                bet_amount_input.setAttribute("data-default", new_bet_amount);
             } else {
                 const loss = bet_amount;
                 total_profit -= loss;
     
-                const increase_loss_percentage = parseFloat(increase_loss_input.value) || 0;
-                let new_bet_amount = default_bet_amount;
+                if (auto_mode_button.classList.contains("active")) {
+                    const increase_loss_percentage = parseFloat(increase_loss_input.value) || 0;
+                    let new_bet_amount = default_bet_amount;
     
-                if (reset_loss_button.classList.contains("active")) {
-                    new_bet_amount = default_bet_amount;
-                } else if (increase_by_loss_button.classList.contains("active")) {
-                    new_bet_amount = bet_amount + (bet_amount * increase_loss_percentage / 100);
+                    if (reset_loss_button.classList.contains("active")) {
+                        new_bet_amount = default_bet_amount;
+                    } else if (increase_by_loss_button.classList.contains("active")) {
+                        new_bet_amount = bet_amount + (bet_amount * increase_loss_percentage / 100);
+                    }
+    
+                    bet_amount_input.value = new_bet_amount.toFixed(2);
+                    bet_amount_input.setAttribute("data-default", default_bet_amount);
                 }
-    
-                bet_amount_input.value = new_bet_amount.toFixed(2);
-                bet_amount_input.setAttribute("data-default", default_bet_amount);
             }
     
             add_game_result(rolled_multiplier, is_win);
@@ -287,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
             if (bets_made >= total_bets) stop_auto_bet();
         });
-    }
+    }    
     
     function start_auto_bet() {
         const input_bets = parseInt(num_bets_input.value, 10);
