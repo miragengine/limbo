@@ -27,12 +27,13 @@ body {
 
 .logo {
 	position: absolute;
+	top: 10px;
 	left: 360px;
 	color: #FFFFFF;
 }
 
 .logo svg {
-	width: 80px;
+	width: 70px;
 	height: auto;
 	display: block;
 	fill: #FFFFFF;
@@ -345,7 +346,7 @@ label {
 	border-radius: 3px;
 	font-size: 14px;
 	background-color: #0F212E;
-	color: #d1d4db;
+	color: #eef0f5;
 	font-family: 'Proxima Nova', sans-serif;
 	font-weight: 600;
 	width: 100%;
@@ -409,7 +410,7 @@ label {
 	border-radius: 3px;
 	font-size: 14px;
 	background-color: #0F212E;
-	color: #d1d4db;
+	color: #eef0f5;
 	font-family: 'Proxima Nova', sans-serif;
 	font-weight: 600;
 	flex: 1;
@@ -471,7 +472,7 @@ label {
 }
 
 #profit-on-win {
-	color: #d1d4db;
+	color: #eef0f5;
 }
 
 .profit-group:hover {
