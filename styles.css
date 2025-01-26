@@ -4,7 +4,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 90vh;
+	height: 95vh;
 	margin: 0;
 	background-color: #1A2C38;
 }
@@ -14,7 +14,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: #1A2C38;
-	padding: 10px 20px;
+	padding: 6px 15px;
 	color: #FFFFFF;
 	font-family: 'Proxima Nova', sans-serif;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
@@ -44,13 +44,16 @@ body {
 	background-color: #0F212E;
 	border-radius: 4px;
 	overflow: hidden;
+	transition: background-color 0.2s ease;
+}
+
+.balance-wrapper:hover {
+	background-color: #071824;
 }
 
 .svg-icon {
-	width: 16px;
-	height: 16px;
-	margin-left: 5px;
-	margin-right: 5px;
+	width: 14.5px;
+	height: 14.5px;
 	vertical-align: middle;
 	fill: #BFBBBB;
 }
@@ -59,18 +62,18 @@ body {
 	display: flex;
 	align-items: center;
 	gap: 5px;
-	padding: 14px 16px;
+	padding: 2px 12px;
 	background-color: #0F212E;
 	transition: background-color 0.2s ease;
+}
+
+.balance-container:hover {
+	background-color: #071824;
 }
 
 .dropdown-icon {
 	font-size: 0.7em;
 	color: #AAAAAA;
-}
-
-.balance-container:hover {
-	background-color: #071824;
 }
 
 .balance {
@@ -89,6 +92,7 @@ body {
 	border: none;
 	padding: 15px 15px;
 	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 600;
 	font-size: 14px;
 	border-radius: 0 4px 4px 0;
 	cursor: pointer;
@@ -123,7 +127,7 @@ body {
 
 .popup h3 {
 	color: #fff;
-	margin-bottom: 10px;
+	margin-top: 0;
 }
 
 .popup input {
@@ -155,9 +159,8 @@ body {
 	background-color: #00E701;
 	color: black;
 	border: none;
-	padding: 10px;
+	padding: 15px;
 	width: 100%;
-	margin-bottom: 10px;
 	border-radius: 4px;
 	cursor: pointer;
 	font-family: 'Proxima Nova', sans-serif;
@@ -178,14 +181,17 @@ body {
 }
 
 .bet-container {
-	text-align: center;
-	background-color: #213743;
-	padding: 15px;
-	border-radius: 8px 0 0 8px;
-	box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
-	color: #d1d4db;
-	min-width: 200px;
-	min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #213743;
+    padding: 15px;
+    border-radius: 8px 0 0 0;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+    color: #d1d4db;
+    min-width: 300px;
+    width: 300px;
+    min-height: 600px;
 }
 
 .mode-switch {
@@ -195,44 +201,23 @@ body {
 	background-color: #0F212E;
 	border-radius: 50px;
 	padding: 5px;
-	margin-bottom: 15px;
+	margin-bottom: 15px; 
 	gap: 5px;
 }
 
-.mode-button {
-	flex: 1;
-	padding: 10px;
-	background-color: #0F212E;
-	color: #f5f5f5;
-	font-family: 'Proxima Nova', sans-serif;
-	font-weight: 600;
-	border: none;
-	cursor: pointer;
-	text-align: center;
-	border-radius: 50px;
-	transition: background-color 0.2s ease;
-}
-
-.mode-button.active {
-	background-color: #2F4553;
-}
-
-.mode-button:hover {
-	background-color: #557086;
-}
-
 .multiplier-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background-color: #0F212E;
-	border-radius: 0 8px 8px 0;
-	height: 100%;
-	min-height: 650px;
-	box-sizing: border-box;
-	flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0F212E;
+    border-radius: 0 8px 0 0;
+    height: 100%;
+    min-height: 650px;
+    box-sizing: border-box;
+    flex: 1;
+    position: relative;
 }
 
 .multiplier-top {
@@ -544,4 +529,369 @@ label {
 .bet-button:active {
 	width: 99%;
 	padding: 14px;
+}
+
+.main-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	width: 100%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.fairness-button {
+	background-color: transparent;
+	font-family: 'Proxima Nova', sans-serif;
+	color: #B1BAD3;
+	border: none;
+	padding: 8px 15px;
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.fairness-button:hover {
+	color: #e9edf8;
+}
+
+#settings-tooltip {
+	position: absolute;
+	bottom: calc(100% + 10px);
+	left: 0;
+	display: none;
+	flex-direction: row;
+	align-items: center;
+	background-color: #ffffff;
+	padding: 8px 16px;
+	border-radius: 8px;
+	z-index: 1000;
+}
+
+#settings-tooltip.show {
+	display: flex;
+}
+
+#settings-tooltip svg {
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	fill: #2F4553;
+	transition: fill 0.1s ease;
+}
+
+#settings-tooltip span {
+	color: #2F4553;
+	font-family: 'Proxima Nova', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	transition: color 0.1s ease;
+}
+
+#settings-tooltip.active svg {
+	fill: #1475E1;
+}
+
+#settings-tooltip.active span {
+	color: #1475E1;
+}
+
+.game-footer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #0F212E;
+	padding: 10px 20px;
+	border-radius: 0 0 8px 8px;
+}
+
+.footer-left,
+.footer-right {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.footer-button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, fill 0.2s ease;
+	position: relative;
+}
+
+.footer-button:hover svg {
+	fill: #ffffff;
+}
+
+.footer-button svg {
+	fill: #B1BAD3;
+	transition: fill 0.2s ease;
+}
+
+
+
+
+
+.mode-button {
+	flex: 1;
+	padding: 10px;
+	background-color: #0F212E;
+	color: #f5f5f5;
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 600;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 50px;
+	transition: background-color 0.2s ease;
+}
+
+.mode-button.active {
+	background-color: #2F4553;
+}
+
+.mode-button:hover {
+	background-color: #557086;
+}
+
+
+
+
+
+.auto-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #0F212E;
+    border-radius: 4px;
+    border: 2px solid #9dc7e92d;
+    transition: border 0.2s ease-in-out;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    color: #d1d4db;
+    margin-bottom: 10px;
+}
+
+.auto-input-group:hover {
+    border-color: #5e7d96;
+}
+
+.auto-input-group input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #d1d4db;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.auto-input-group svg {
+    position: absolute;
+    right: 10px;
+    width: 16px;
+    height: 16px;
+    fill: #B1BAD3;
+    pointer-events: none;
+}
+
+.auto-input-group:hover svg {
+    fill: #ffffff;
+}
+
+.auto-input-group-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #B1BAD3;
+}
+
+.auto-input-group input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
+.auto-input-group input[type="number"]::-webkit-inner-spin-button, 
+.auto-input-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+.auto-input-group-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.auto-input-group-label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #B1BAD3;
+    text-align: left;
+}
+
+.auto-input-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    background-color: #0F212E;
+    border-radius: 4px;
+    border: 2px solid #9dc7e92d;
+    transition: border-color 0.2s ease-in-out;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.auto-input-group:hover {
+    border-color: #5e7d96;
+}
+
+.auto-input-group-conditions {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 1px;
+    background-color: #2F4553;
+    border-radius: 4px;
+    border: 2px solid #9dc7e910;
+    font-family: 'Proxima Nova', sans-serif;
+    gap: 3px;
+}
+
+.win-button {
+    flex: 0 0 auto;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.win-button.active {
+    background-color: #0F212E;
+    color: #B1BAD3;
+}
+
+.win-button:not(.active):hover {
+    background-color: #557086;
+}
+
+
+.increase-container {
+    flex: 1;
+    position: relative;
+}
+
+.increase-container input {
+    width: 100%;
+    padding: 8px;
+    padding-right: 25px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #0F212E;
+    color: #d1d4db;
+    text-align: left;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease-in-out;
+    box-sizing: border-box;
+}
+
+.increase-container input:enabled:hover {
+    border-color: #5e7d96;
+}
+
+.increase-container input:disabled {
+    background-color: #1E3340;
+    color: #5e7d96;
+    cursor: not-allowed;
+}
+
+.increase-container span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #d1d4db;
+    pointer-events: none;
+}
+
+.game-history {
+    margin-top: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Proxima Nova', sans-serif;
+}
+
+.game-history h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #B1BAD3;
+}
+
+.history-list {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: calc(100% - 40px);
+}
+
+.history-item {
+    padding: 9px 15px;
+    border-radius: 64px;
+    font-weight: bold;
+    font-size: 11px;
+    background-color: #0F212E;
+    color: #FFFFFF;
+    transition: transform 0.2s ease;
+}
+
+.history-item.win {
+    background-color: #00E701;
+    color: black;
+	transition: background-color 0.2s ease;
+}
+
+.history-item.win:hover {
+	background-color: #1FFF20;
+}
+
+.history-item.loss {
+    background-color: #2F4553;
+    color: white;
+	transition: background-color 0.2s ease;
+}
+
+.history-item.loss:hover {
+	background-color: #557086;
 }
