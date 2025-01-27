@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limbo Casino Game Online - Play Best Stake Original Games</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Proxima+Nova">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="styles.css" rel="stylesheet">
     <link rel="icon" type="image/webp" href="favicon.webp">
   </head>
@@ -27,8 +28,10 @@
             <path d="M31.275 57.645 27 59.31 29.07 51l4.32-1.74L39.645 24H55.02l-4.5 18.585 4.23-1.71-2.04 8.25-4.29 1.71-2.535 10.5H69L66.375 72H27.75l3.525-14.355Z" fill="#fff"></path>
           </svg>
           <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon " style="transform: rotate(0deg);
-          "> <title></title> <path d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"></path>
-        </svg>
+          ">
+            <title></title>
+            <path d="M32.271 49.763 9.201 26.692l6.928-6.93 16.145 16.145 16.144-16.144 6.93 6.929-23.072 23.07h-.005Z"></path>
+          </svg>
         </div>
         <button class="wallet-button">Wallet</button>
         <div id="popup-overlay" class="popup-overlay">
@@ -43,12 +46,10 @@
     <div class="main-wrapper">
       <div class="main-container">
         <div class="bet-container">
-
           <div class="mode-switch">
             <button class="mode-button active">Manual</button>
             <button class="mode-button">Auto</button>
           </div>
-
           <div class="header">
             <span>Bet Amount</span>
             <span>0.00000000 LTC</span>
@@ -64,7 +65,6 @@
             <div class="zseparator"></div>
             <button id="double-button">2&times;</button>
           </div>
-
           <div id="manual-mode-container">
             <div class="profit-container">
               <div class="header">
@@ -81,9 +81,7 @@
             </div>
             <button class="bet-button">Bet</button>
           </div>
-
           <div id="auto-mode-container" style="display: none;">
-
             <div>
               <label class="auto-input-group-label" for="num-bets">Number of Bets</label>
               <div class="auto-input-group">
@@ -92,61 +90,55 @@
                   <path d="M47.746 15.695c-9.287 0-13.851 7.073-17.908 13.345-4.377 6.752-7.473 10.836-13.531 10.836a7.846 7.846 0 0 1-7.847-7.847 7.845 7.845 0 0 1 7.847-7.846 9.29 9.29 0 0 1 6.915 2.669l1.014-1.549c1.094-1.708 2.349-3.602 3.79-5.524a17.365 17.365 0 0 0-11.743-4.084h.024C7.302 15.695 0 22.998 0 32.002 0 41.007 7.302 48.31 16.307 48.31c11.103 0 16.387-8.006 20.63-14.705 3.79-5.872 6.352-9.448 10.81-9.448a7.846 7.846 0 0 1 7.846 7.846 7.846 7.846 0 0 1-7.847 7.847 9.27 9.27 0 0 1-5.791-1.78l.027.018a65.172 65.172 0 0 1-5.047 6.937l.082-.104a17.38 17.38 0 0 0 10.358 3.392c.113 0 .225 0 .334-.003h-.016C56.698 48.31 64 41.007 64 32.002c0-9.004-7.302-16.307-16.307-16.307h.053Z"></path>
                 </svg>
               </div>
-            </div>            
-          
+            </div>
             <div class="auto-input-group-container">
               <label class="auto-input-group-label">On Win</label>
               <div class="auto-input-group-conditions">
-                  <button id="reset-win" class="win-button active">Reset</button>
-                  <button id="increase-by-button" class="win-button">Increase by:</button>
-                  <div class="increase-container">
-                      <input id="increase-win" type="number" placeholder="0" disabled>
-                      <span>%</span>
-                  </div>
+                <button id="reset-win" class="win-button active">Reset</button>
+                <button id="increase-by-button" class="win-button">Increase by:</button>
+                <div class="increase-container">
+                  <input id="increase-win" type="number" placeholder="0" disabled>
+                  <span>%</span>
+                </div>
               </div>
-          </div>          
-          
-          <div class="auto-input-group-container">
+            </div>
+            <div class="auto-input-group-container">
               <label class="auto-input-group-label">On Loss</label>
               <div class="auto-input-group-conditions">
-                  <button id="reset-loss" class="win-button active">Reset</button>
-                  <button id="increase-by-loss-button" class="win-button">Increase by:</button>
-                  <div class="increase-container">
-                      <input id="increase-loss" type="number" placeholder="0" disabled>
-                      <span>%</span>
-                  </div>
+                <button id="reset-loss" class="win-button active">Reset</button>
+                <button id="increase-by-loss-button" class="win-button">Increase by:</button>
+                <div class="increase-container">
+                  <input id="increase-loss" type="number" placeholder="0" disabled>
+                  <span>%</span>
+                </div>
               </div>
-          </div>
-          
-          <div>
-            <div class="header">
-              <span>Stop on Profit</span>
-              <span>0.00000000 LTC</span>
             </div>
-            <label class="auto-input-group-label" for="stop-profit"></label>
-            <div class="auto-input-group">
-              <input id="stop-profit" type="value" placeholder="0">
+            <div>
+              <div class="header">
+                <span>Stop on Profit</span>
+                <span>0.00000000 LTC</span>
+              </div>
+              <label class="auto-input-group-label" for="stop-profit"></label>
+              <div class="auto-input-group">
+                <input id="stop-profit" type="value" placeholder="0">
+              </div>
             </div>
-          </div>  
-
-          <div>
-            <div class="header">
-              <span>Stop on Loss</span>
-              <span>0.00000000 LTC</span>
+            <div>
+              <div class="header">
+                <span>Stop on Loss</span>
+                <span>0.00000000 LTC</span>
+              </div>
+              <label class="auto-input-group-label" for="stop-loss"></label>
+              <div class="auto-input-group">
+                <input id="stop-loss" type="value" placeholder="0">
+              </div>
             </div>
-            <label class="auto-input-group-label" for="stop-loss"></label>
-            <div class="auto-input-group">
-              <input id="stop-loss" type="value" placeholder="0">
-            </div>
-          </div>  
-
-          <button class="bet-button" id="start-autobet" style="margin-top: 0px;">Start Autobet</button>          
+            <button class="bet-button" id="start-autobet" style="margin-top: 0px;">Start Autobet</button>
           </div>
         </div>
         <div class="multiplier-container">
           <div class="game-history">
-            <div class="history-list" id="history-list">
-            </div>
+            <div class="history-list" id="history-list"></div>
           </div>
           <div class="multiplier-top">
             <span class="multiplier-value">1.00×</span>
@@ -170,6 +162,57 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="live-stats">
+        <div class="stats-header">
+          <div class="stats-title">
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon stats-icon" style="width: 13px; height: 13px; fill: #d6dae6">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M33.013 19.707 64 0v12.64L30.987 33.627 18.133 18.853 0 30.693V17.947L20.107 4.853l12.906 14.854ZM16 64H5.333V35.173L16 28.213V64Zm13.707-21.653-3.04-3.52V64h10.666V37.493l-2.773 1.76-4.853 3.094ZM58.667 64H48V30.72l10.667-6.8V64Z"></path>
+            </svg>
+            <span style="color: #fff">Live Stats</span>
+          </div>
+          <button class="close-stats">
+            <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon">
+              <path d="m54.827 16.187-7.014-7.014L32 24.987 16.187 9.173l-7.014 7.014L24.987 32 9.173 47.813l7.014 7.014L32 39.013l15.813 15.814 7.014-7.014L39.013 32l15.814-15.813Z"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="stats-content">
+          <div class="stats-filter">
+            <select class="stats-dropdown">
+              <option value="bets">Bets</option>
+            </select>
+            <button class="stats-refresh">
+              <svg fill="currentColor" viewBox="0 0 64 64" class="svg-icon" style="width: 16px; height: 16px;">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M31.943 13.08c-9.37 0-17.128 6.904-18.476 16.004l4.798-.002-9.146 12.96-9.12-12.96h5.334l-.01-.12C6.889 15.536 18.291 5.112 32.127 5.112a26.823 26.823 0 0 1 17.5 6.452l-5.334 6.186.02.018a18.584 18.584 0 0 0-12.37-4.688Zm22.937 8.752L64 34.792h-5.174l-.01.12C57.332 48.398 45.902 58.888 32.02 58.888a26.826 26.826 0 0 1-17.646-6.576l5.334-6.186a18.597 18.597 0 0 0 12.47 4.776c9.406 0 17.188-6.96 18.49-16.11h-4.934l9.146-12.96Z"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="stat-item">
+            <div class="stats-row">
+              <div class="stat-column">
+                <span class="stat-label">Profit</span>
+                <span class="stat-value" data-stat="profit" style="color: #00E701;">$0.00</span>
+              </div>
+              <div class="stat-column">
+                <span class="stat-label" style="margin-left: 10px;">Wins</span>
+                <span class="stat-value" data-stat="wins" style="color: #00E701; margin-left: 10px;">0</span>
+              </div>
+            </div>
+            <div class="vertical-separator"></div>
+            <div class="stats-row">
+              <div class="stat-column">
+                <span class="stat-label">Wagered</span>
+                <span class="stat-value" data-stat="wagered" style="color: #FFFFFF;">$0.00</span>
+              </div>
+              <div class="stat-column">
+                <span class="stat-label" style="margin-left: 10px;">Losses</span>
+                <span class="stat-value" data-stat="losses" style="color: #FF4D4D; margin-left: 10px;">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="stats-history"></div>
         </div>
       </div>
       <div class="game-footer">
