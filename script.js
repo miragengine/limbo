@@ -1,3 +1,4 @@
+// UPDATED
 document.addEventListener('DOMContentLoaded', function() {
 	const bet_amount_input = document.getElementById('bet-amount');
 	const balance_element = document.querySelector('.balance');
@@ -496,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	refresh_stats_button.addEventListener('click', reset_stats);
 
 	if (balance_element) {
-		balance_element.textContent = '$50.00';
+		balance_element.textContent = '$51.00';
 	}
 
 	update_profit();
