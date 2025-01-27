@@ -4,7 +4,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 95vh;
+	height: 100vh;
 	margin: 0;
 	background-color: #1A2C38;
 }
@@ -57,6 +57,11 @@ body {
 	height: 14.5px;
 	vertical-align: middle;
 	fill: #BFBBBB;
+	transition: fill 0.2s ease;
+}
+
+.svg-icon:hover {
+	fill: #fff;
 }
 
 .balance-container {
@@ -182,17 +187,17 @@ body {
 }
 
 .bet-container {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    background-color: #213743;
-    padding: 15px;
-    border-radius: 8px 0 0 0;
-    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
-    color: #d1d4db;
-    min-width: 300px;
-    width: 300px;
-    min-height: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	background-color: #213743;
+	padding: 15px;
+	border-radius: 8px 0 0 0;
+	box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
+	color: #d1d4db;
+	min-width: 300px;
+	width: 300px;
+	min-height: 680px;
 }
 
 .mode-switch {
@@ -202,23 +207,23 @@ body {
 	background-color: #0F212E;
 	border-radius: 50px;
 	padding: 5px;
-	margin-bottom: 15px; 
+	margin-bottom: 15px;
 	gap: 5px;
 }
 
 .multiplier-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: #0F212E;
-    border-radius: 0 8px 0 0;
-    height: 100%;
-    min-height: 650px;
-    box-sizing: border-box;
-    flex: 1;
-    position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #0F212E;
+	border-radius: 0 8px 0 0;
+	height: 100%;
+	min-height: 710px;
+	box-sizing: border-box;
+	flex: 1;
+	position: relative;
 }
 
 .multiplier-top {
@@ -545,6 +550,7 @@ label {
 .fairness-button {
 	background-color: transparent;
 	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 600;
 	color: #B1BAD3;
 	border: none;
 	padding: 8px 15px;
@@ -636,9 +642,6 @@ label {
 }
 
 
-
-
-
 .mode-button {
 	flex: 1;
 	padding: 10px;
@@ -662,224 +665,214 @@ label {
 }
 
 
-
-
-
 .auto-input-group {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background-color: #0F212E;
-    border-radius: 4px;
-    border: 2px solid #9dc7e92d;
-    transition: border 0.2s ease-in-out;
-    font-family: 'Proxima Nova', sans-serif;
-    font-size: 14px;
-    color: #d1d4db;
-    margin-bottom: 10px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	background-color: #0F212E;
+	border-radius: 4px;
+	border: 2px solid #9dc7e92d;
+	transition: border 0.2s ease-in-out;
+	font-family: 'Proxima Nova', sans-serif;
+	font-size: 14px;
+	color: #d1d4db;
+	margin-bottom: 10px;
 }
 
 .auto-input-group:hover {
-    border-color: #5e7d96;
+	border-color: #5e7d96;
 }
 
 .auto-input-group input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: #d1d4db;
-    font-family: 'Proxima Nova', sans-serif;
+	flex: 1;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	color: #d1d4db;
+	font-family: 'Proxima Nova', sans-serif;
 }
 
 .auto-input-group svg {
-    position: absolute;
-    right: 10px;
-    width: 16px;
-    height: 16px;
-    fill: #B1BAD3;
-    pointer-events: none;
+	position: absolute;
+	right: 10px;
+	width: 16px;
+	height: 16px;
+	fill: #B1BAD3;
+	pointer-events: none;
 }
 
 .auto-input-group:hover svg {
-    fill: #ffffff;
+	fill: #ffffff;
 }
 
 .auto-input-group-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #B1BAD3;
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #B1BAD3;
 }
 
 .auto-input-group input[type="number"] {
-    -moz-appearance: textfield;
-    -webkit-appearance: none; 
-    appearance: none;
+	-moz-appearance: textfield;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
-.auto-input-group input[type="number"]::-webkit-inner-spin-button, 
+.auto-input-group input[type="number"]::-webkit-inner-spin-button,
 .auto-input-group input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
-
-
-
-
-
-
-
 
 
 .auto-input-group-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
 }
 
 .auto-input-group-label {
-    margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #B1BAD3;
-    text-align: left;
+	margin-bottom: 5px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #B1BAD3;
+	text-align: left;
 }
 
 .auto-input-group {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 10px;
-    background-color: #0F212E;
-    border-radius: 4px;
-    border: 2px solid #9dc7e92d;
-    transition: border-color 0.2s ease-in-out;
-    font-family: 'Proxima Nova', sans-serif;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 10px;
+	background-color: #0F212E;
+	border-radius: 4px;
+	border: 2px solid #9dc7e92d;
+	transition: border-color 0.2s ease-in-out;
+	font-family: 'Proxima Nova', sans-serif;
 }
 
 .auto-input-group:hover {
-    border-color: #5e7d96;
+	border-color: #5e7d96;
 }
 
 .auto-input-group-conditions {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 1px;
-    background-color: #2F4553;
-    border-radius: 4px;
-    border: 2px solid #9dc7e910;
-    font-family: 'Proxima Nova', sans-serif;
-    gap: 3px;
+	display: flex;
+	align-items: center;
+	position: relative;
+	padding: 1px;
+	background-color: #2F4553;
+	border-radius: 4px;
+	border: 2px solid #9dc7e910;
+	font-family: 'Proxima Nova', sans-serif;
+	gap: 3px;
 }
 
 .win-button {
-    flex: 0 0 auto;
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 10px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Proxima Nova', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+	flex: 0 0 auto;
+	background-color: transparent;
+	color: white;
+	border: none;
+	padding: 10px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-family: 'Proxima Nova', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .win-button.active {
-    background-color: #0F212E;
-    color: #B1BAD3;
+	background-color: #0F212E;
+	color: #B1BAD3;
 }
 
 .win-button:not(.active):hover {
-    background-color: #557086;
+	background-color: #557086;
 }
 
 
 .increase-container {
-    flex: 1;
-    position: relative;
+	flex: 1;
+	position: relative;
 }
 
 .increase-container input {
-    width: 100%;
-    padding: 8px;
-    padding-right: 25px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    background-color: #0F212E;
-    color: #d1d4db;
-    text-align: left;
-    font-family: 'Proxima Nova', sans-serif;
-    font-size: 14px;
-    border: 2px solid transparent;
-    transition: border-color 0.2s ease-in-out;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	padding-right: 25px;
+	border: none;
+	outline: none;
+	border-radius: 4px;
+	background-color: #0F212E;
+	color: #d1d4db;
+	text-align: left;
+	font-family: 'Proxima Nova', sans-serif;
+	font-size: 14px;
+	border: 2px solid transparent;
+	transition: border-color 0.2s ease-in-out;
+	box-sizing: border-box;
 }
 
 .increase-container input:enabled:hover {
-    border-color: #5e7d96;
+	border-color: #5e7d96;
 }
 
 .increase-container input:disabled {
-    background-color: #1E3340;
-    color: #5e7d96;
-    cursor: not-allowed;
+	background-color: #1E3340;
+	color: #5e7d96;
+	cursor: not-allowed;
 }
 
 .increase-container span {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #d1d4db;
-    pointer-events: none;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 18px;
+	color: #d1d4db;
+	pointer-events: none;
 }
 
 .game-history {
-    margin-top: 20px;
-    text-align: center;
-    color: #FFFFFF;
-    font-family: 'Proxima Nova', sans-serif;
+	margin-top: 20px;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Proxima Nova', sans-serif;
 }
 
 .game-history h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #B1BAD3;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	color: #B1BAD3;
 }
 
 .history-list {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 5px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: calc(100% - 40px);
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 5px;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	max-width: calc(100% - 40px);
 }
 
 .history-item {
-    padding: 9px 15px;
-    border-radius: 64px;
-    font-weight: bold;
-    font-size: 11px;
-    background-color: #0F212E;
-    color: #FFFFFF;
-    transition: transform 0.2s ease;
+	padding: 9px 15px;
+	border-radius: 64px;
+	font-weight: bold;
+	font-size: 11px;
+	background-color: #0F212E;
+	color: #FFFFFF;
+	transition: transform 0.2s ease;
 }
 
 .history-item.win {
-    background-color: #00E701;
-    color: black;
+	background-color: #00E701;
+	color: black;
 	transition: background-color 0.2s ease;
 }
 
@@ -888,11 +881,176 @@ label {
 }
 
 .history-item.loss {
-    background-color: #2F4553;
-    color: white;
+	background-color: #2F4553;
+	color: white;
 	transition: background-color 0.2s ease;
 }
 
 .history-item.loss:hover {
 	background-color: #557086;
+}
+
+
+.live-stats {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-205%, -20%);
+	width: 280px;
+	background-color: #213743;
+	color: #FFFFFF;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+	font-family: 'Proxima Nova', sans-serif;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.live-stats span {
+	color: #B1BAD3;
+	font-size: 14px;
+}
+
+.stats-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	cursor: grab;
+	background-color: #1A2C38;
+	border-bottom: 1px solid #1A2F45;
+}
+
+.stats-title {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #B1BAD3;
+}
+
+.stats-icon {
+	fill: #B1BAD3;
+}
+
+.close-stats {
+	background: none;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+.stats-content {
+	padding: 15px;
+}
+
+.stats-filter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.stats-filter-button {
+	background-color: #1A2F45;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.stats-filter-button.active {
+	background-color: #00E701;
+	color: black;
+}
+
+.stats-dropdown {
+	padding: 13px 22px;
+	background-color: #0F212E;
+	font-family: 'Proxima Nova', sans-serif;
+	font-weight: 600;
+	font-size: 12px;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 64px;
+	appearance: none;
+	position: relative;
+}
+
+.stats-refresh {
+	background: none;
+	border: none;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+.stats-overview {
+	margin-bottom: 10px;
+}
+
+.stat-item {
+	background-color: #0F212E;
+	border-radius: 8px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.stats-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	position: relative;
+}
+
+.stat-column {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	flex: 1;
+}
+
+.vertical-separator {
+	position: absolute;
+	left: 50%;
+	top: 122px;
+	width: 1px;
+	height: 75px;
+	background-color: #213743;
+}
+
+.stat-label {
+	color: #B1BAD3;
+	font-size: 13px;
+}
+
+.stat-value {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.stats-history {
+	margin-top: 20px;
+	height: 150px;
+	overflow-y: auto;
+	background-color: #0F212E;
+	border-radius: 8px;
+	padding: 5px;
+	color: #B1BAD3;
+}
+
+.stats-refresh .svg-icon {
+	width: 16px;
+	height: 16px;
+	transition: fill 0.2s ease;
+}
+
+.stats-refresh .svg-icon:hover {
+	fill: #ffffff;
 }
