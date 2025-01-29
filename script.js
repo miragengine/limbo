@@ -497,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	refresh_stats_button.addEventListener('click', reset_stats);
 
 	if (balance_element) {
-		balance_element.textContent = '$51.00';
+		balance_element.textContent = '$100.00';
 	}
 
 	update_profit();
