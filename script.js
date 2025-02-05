@@ -64,6 +64,60 @@ document.addEventListener('DOMContentLoaded', function() {
 		losses: 0
 	};
 
+	const ctx = document.getElementById('profit_chart').getContext('2d');
+
+	let profit_data = {
+		labels: [],
+		datasets: [{
+			label: 'Profit Trend',
+			data: [],
+			borderWidth: 2,
+			borderColor: 'gray',
+			fill: true,
+			tension: 0.4,
+			backgroundColor: 'rgba(128, 128, 128, 0.5)'
+		}]
+	};
+	
+	let profit_chart = new Chart(ctx, {
+		type: 'line',
+		data: profit_data,
+		options: {
+			responsive: true,
+			maintainAspectRatio: false,
+			scales: {
+				x: { display: false },
+				y: { 
+					display: false,
+					grid: {
+						drawTicks: false,
+						color: 'rgba(128, 128, 128, 0.8)',
+						lineWidth: 1
+					}
+				}
+			},
+			elements: {
+				line: { 
+					tension: 0.4, 
+					borderWidth: 2,
+				},
+				point: { radius: 0 }
+			},
+			plugins: {
+				legend: { display: false }
+			}
+		}
+	});
+	
+	function update_profit_graph(profit) {
+		let now = new Date().toLocaleTimeString();
+	
+		profit_data.labels.push(now);
+		profit_data.datasets[0].data.push(profit);
+	
+		profit_chart.update('none');
+	}
+	
 	const profit_element = document.querySelector('.stat-value[data-stat="profit"]');
 	const wagered_element = document.querySelector('.stat-value[data-stat="wagered"]');
 	const wins_element = document.querySelector('.stat-value[data-stat="wins"]');
@@ -389,6 +443,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			}
 
 			add_game_result(rolled_multiplier, is_win);
+			update_profit_graph(stats.profit);
 			update_stats_ui();
 
 			rolling = false;
